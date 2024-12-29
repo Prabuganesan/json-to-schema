@@ -1,5 +1,5 @@
 {
-  "name": "json-to-schema",
+  "name": "json-to-schema-generator",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,10 +7,20 @@
     "build": "tsc"
 
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "json",
+    "schema",
+    "json-schema",
+    "generator",
+    "json-to-schema",
+    "json-schema-generator",
+    "AI-schema",
+    "output-schema",
+    "AI-output-schema"
+  ],
+  "author": "Prabu ganesan",
   "license": "ISC",
-  "description": "",
+  "description": "json-to-schema is a lightweight and powerful utility that generates JSON Schema from a given JSON object. It automatically detects the structure of the JSON, including nested objects and arrays, and generates a corresponding schema that can be used for validation, documentation, and other purposes.",
   "devDependencies": {
     "@types/node": "^22.10.2",
     "typescript": "^5.7.2"
