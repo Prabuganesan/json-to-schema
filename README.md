@@ -23,7 +23,7 @@ npm install json-to-schema
 ```
 **Usage**
 
-Basic Usage
+## Generate schema Against a JSON
 ```
 import { generateJsonSchema } from 'json-to-schema';
 
@@ -99,12 +99,38 @@ The generated schema will look like:
   "required": ["name", "age", "isEmployed", "address", "skills"]
 }
 ```
+
 **Supported Types**
 
 
 *  Primitive Types: string, number, boolean, null, undefined
 *  Objects: Handles nested objects and creates properties for them.
 *  Arrays: Handles arrays and defines the items key, inferring the type of elements inside the array.
+
+## Validate JSON Against a Schema
+
+This package also supports validating JSON data against a schema using Ajv.
+
+Example:
+
+```
+import { generateJsonSchema, validateJsonWithSchema } from "json-to-schema-generator";
+
+const jsonObject = {
+  name: "John Doe",
+  age: 30,
+  isEmployed: true,
+};
+
+const schema = generateJsonSchema(jsonObject);
+
+const validationResult = validateJsonWithSchema(jsonObject, schema);
+if (validationResult.isValid) {
+  console.log("JSON is valid!");
+} else {
+  console.error("Validation errors:", validationResult.errors);
+}
+```
 
 **License**
 
