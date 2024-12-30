@@ -10,6 +10,11 @@ json-to-schema is a lightweight and powerful utility that generates JSON Schema 
 *  Automatically identifies required fields based on non-null/undefined values.
 *  Handles edge cases such as Date and RegExp.
 
+## ❤️ Support My Work!
+Maintaining this package requires effort and dedication. If this project helped you, consider buying me a coffee or supporting me via PayPal. Every donation helps keep this project alive!  
+
+[![Support via PayPal](https://img.shields.io/badge/Support-PayPal.me-blue?style=for-the-badge&logo=paypal)](https://paypal.me/prabuganesan)
+
 **Installation**
 
 You can install json-to-schema via npm:
