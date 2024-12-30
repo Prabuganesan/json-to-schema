@@ -1,11 +1,10 @@
 {
   "name": "json-to-schema-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
-
   },
   "keywords": [
     "json",
@@ -31,7 +30,7 @@
   },
   "homepage": "https://github.com/Prabuganesan/json-to-schema#readme",
   "funding": {
-  "type": "paypal",
-  "url": "https://paypal.me/prabuganesan"
-}
+    "type": "paypal",
+    "url": "https://paypal.me/prabuganesan"
+  }
 }
