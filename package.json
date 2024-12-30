@@ -29,5 +29,9 @@
     "type": "git",
     "url": "https://github.com/Prabuganesan/json-to-schema"
   },
-  "homepage": "https://github.com/Prabuganesan/json-to-schema#readme"
+  "homepage": "https://github.com/Prabuganesan/json-to-schema#readme",
+  "funding": {
+  "type": "paypal",
+  "url": "https://paypal.me/prabuganesan"
+}
 }
