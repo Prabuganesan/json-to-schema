@@ -1,4 +1,4 @@
-const { generateJsonSchema } = require('./dist');
+const { generateJsonSchema,validateJsonWithSchema } = require('./dist');
 
 const jsonObject = {
   name: "John Doe",
@@ -15,4 +15,13 @@ const jsonObject = {
   skills: ["JavaScript", "Node.js"]
 };
 
-console.log(JSON.stringify(generateJsonSchema(jsonObject),null,2));
+
+const schema = generateJsonSchema(jsonObject);
+console.log("Generated Schema:", JSON.stringify(schema, null, 2));
+
+const validationResult = validateJsonWithSchema(jsonObject, schema);
+if (validationResult.isValid) {
+  console.log("JSON is valid against the schema!");
+} else {
+  console.error("Validation errors:", validationResult.errors);
+}

@@ -21,8 +21,8 @@
   "license": "ISC",
   "description": "json-to-schema is a lightweight and powerful utility that generates JSON Schema from a given JSON object. It automatically detects the structure of the JSON, including nested objects and arrays, and generates a corresponding schema that can be used for validation, documentation, and other purposes.",
   "devDependencies": {
-    "@types/node": "^22.10.2",
-    "typescript": "^5.7.2"
+    "@types/node": "22.10.2",
+    "typescript": "5.7.2"
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,8 @@
   "funding": {
     "type": "paypal",
     "url": "https://paypal.me/prabuganesan"
+  },
+  "dependencies": {
+    "ajv": "8.17.1"
   }
 }

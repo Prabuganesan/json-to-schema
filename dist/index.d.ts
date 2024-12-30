@@ -12,4 +12,8 @@ interface JsonSchema {
     required?: string[];
 }
 declare const generateJsonSchema: (jsonObject: any) => JsonSchema;
-export { generateJsonSchema };
+declare const validateJsonWithSchema: (jsonObject: any, schema: any) => {
+    isValid: boolean;
+    errors: import("ajv").ErrorObject<string, Record<string, any>, unknown>[] | null | undefined;
+};
+export { generateJsonSchema, validateJsonWithSchema };

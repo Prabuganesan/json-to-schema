@@ -1,6 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateJsonSchema = void 0;
+exports.validateJsonWithSchema = exports.generateJsonSchema = void 0;
+const ajv_1 = __importDefault(require("ajv"));
 const generateJsonSchema = (jsonObject) => {
     const schema = {
         type: Array.isArray(jsonObject) ? "array" : "object",
@@ -93,3 +97,20 @@ const generateJsonSchema = (jsonObject) => {
     return schema;
 };
 exports.generateJsonSchema = generateJsonSchema;
+//Validate JSON against a schema using Ajv
+const validateJsonWithSchema = (jsonObject, schema) => {
+    const ajv = new ajv_1.default();
+    const validate = ajv.compile(schema);
+    const isValid = validate(jsonObject);
+    if (!isValid) {
+        return {
+            isValid: false,
+            errors: validate.errors,
+        };
+    }
+    return {
+        isValid: true,
+        errors: null,
+    };
+};
+exports.validateJsonWithSchema = validateJsonWithSchema;

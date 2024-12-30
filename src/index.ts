@@ -1,4 +1,8 @@
+import Ajv from "ajv";
+
+
 type JsonObject = { [key: string]: any };
+
 
 interface JsonSchema {
   type: string;
@@ -101,5 +105,24 @@ const generateJsonSchema = (jsonObject: any): JsonSchema => {
   return schema;
 };
 
-// Expose the function for use in other modules
-export { generateJsonSchema };
+//Validate JSON against a schema using Ajv
+const validateJsonWithSchema = (jsonObject: any, schema: any) => {
+    const ajv = new Ajv();
+    const validate = ajv.compile(schema);
+    const isValid = validate(jsonObject);
+  
+    if (!isValid) {
+      return {
+        isValid: false,
+        errors: validate.errors,
+      };
+    }
+  
+    return {
+      isValid: true,
+      errors: null,
+    };
+  };
+
+
+export { generateJsonSchema, validateJsonWithSchema };
